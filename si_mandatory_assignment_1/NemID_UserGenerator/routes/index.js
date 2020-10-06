@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 /* POST */
-router.post('/', function (req, res, next) {
+router.post('/', function (req, res) {
   const c = JSON.stringify(req.body.cpr);
   const e = req.body.email;
-
+r
   const num = Math.floor(Math.random() * 90000) + 10000;
 
   res.status(201);

@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var logger = require('morgan');
 
-var PasswordRouter = require('./routes/sæve');
+var PasswordRouter = require('./routes/index');
 
 var app = express();
 
