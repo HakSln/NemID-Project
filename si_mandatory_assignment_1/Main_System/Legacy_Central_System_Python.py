@@ -54,14 +54,14 @@ if __name__ == "__main__":
         email = person[2] 
         cpr  = person[7]  
 
-    person_xml = create_xml(firstname, lastname, email, cpr)
-    
-    response = requests.post(f"{esb_serivce_address}/{esb_serivce_endpoint}", data=person_xml, headers=headers)
-    
-    nemID = json.loads(response.text)["nemID"]
+        person_xml = create_xml(firstname, lastname, email, cpr)
 
-    person.append(nemID)
+        response = requests.post(f"{esb_serivce_address}/{esb_serivce_endpoint}", data=person_xml, headers=headers)
 
-    with open(f'{cwd}/msgpack/{cpr}.msgpack', "wb") as outfile:
-           packed = msgpack.packb(person)
-           outfile.write(packed)
+        nemID = json.loads(response.text)["nemID"]
+
+        person.append(nemID)
+
+        with open(f'{cwd}/msgpack/{cpr}.msgpack', "wb") as outfile:
+               packed = msgpack.packb(person)
+               outfile.write(packed)
