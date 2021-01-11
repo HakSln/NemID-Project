@@ -46,7 +46,6 @@ if __name__ == "__main__":
     col_list = ['FirstName', 'LastName', 'DateOfBirth', 'Email', 'Phone', 'Address', 'Country']
 
     df = create_cpr(read_data(f'{path}', col_list), symbol)
-    print('df=', df)
 
     for person in df.values.tolist():
         firstname = person[0] 
